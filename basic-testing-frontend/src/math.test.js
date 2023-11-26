@@ -41,3 +41,21 @@ test('should yield a correct sum if an array of numeric string values is provide
     const expectedResult = numbers.reduce((prevValue, curValue) => +prevValue + +curValue,0);
     expect(result).toBe(expectedResult);
 })
+
+// using not you check for opposite
+/*expect(resultFn).not.toThrow(); */
+test('should throw an error if no value is passed into the function',()=>{
+
+const resultFn=()=>{
+add();
+}
+    expect(resultFn).toThrow();
+})
+
+test('should throw and error if provided with multiple arguments instead of array',()=>{
+    const num1=1;
+    const num2=2;
+    const resultFn=()=>{
+    add(num1,num2);}
+    expect(resultFn).toThrow();
+});
