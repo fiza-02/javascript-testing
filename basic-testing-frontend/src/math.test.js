@@ -52,10 +52,13 @@ add();
     expect(resultFn).toThrow();
 })
 
+/* to throw can expect to be a string of exception or instance of exception*/
+/* add a regular expression*/
 test('should throw and error if provided with multiple arguments instead of array',()=>{
     const num1=1;
     const num2=2;
     const resultFn=()=>{
     add(num1,num2);}
-    expect(resultFn).toThrow();
+    expect(resultFn).toThrow(/is not iterable/);
 });
+
